@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .main{
+        height: 600px;
+        width: 400px;
+        background-color: chartreuse;
+        flex-wrap: wrap;
+        border: 1px solid ;
+    }
+    .inside{
+        height: 200px;
+        background-color: yellow;
+    }
+    .box{
+        display: flex;
+        height:450px;
+        background-color: blueviolet;
+    }
+    button{
+        height: 50px;
+        width: 150px;
+        margin: 20px;
+    }
+</style>
+<body>
+    <center>
+        <div class="main">
+            <div id="box" class="inside"></div>
+            <div class="bottom">
+                <button  id="box1" onclick="color()">Green</button>
+                <button  id="box2" onclick="blue()">Blue</button>
+                <button  id="box3" onclick="red()">Red</button>
+                <button  id="box4" onclick="purple()">Purple</button>
+                <button  id="box5" onclick="orange()">Orange</button>
+                <button  id="box6" onclick="gray()">Gray</button>
+                <button  id="box7" onclick="brown()">Brown</button>
+                <button  id="box8" onclick="pink()">Pink</button>
+            </div>
+            </div>
+        </center>
+    <script>
+        function color(){
+            document.getElementById("box").style.backgroundColor="green";
+        }
+    
+        function blue(){
+            document.getElementById("box").style.backgroundColor="Blue";
+            
+        }
+        function red(){
+            document.getElementById("box").style.backgroundColor="Red";
+            
+        }
+        function purple(){
+            document.getElementById("box").style.backgroundColor="purple";
+            
+        }
+        function orange (){
+            document.getElementById("box").style.backgroundColor="orange";
+            
+        }
+        function gray(){
+            document.getElementById("box").style.backgroundColor="Gray";
+            
+        }
+        function brown(){
+            document.getElementById("box").style.backgroundColor="Brown";
+            
+        }
+        function pink(){
+            document.getElementById("box").style.backgroundColor="Pink";
+            
+        }
+    
+    </script>
+    
+</body>
+</html>

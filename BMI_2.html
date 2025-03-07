@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="BMI2.css">
+</head>
+<body>
+
+<!-- <div>
+        <p id="gen">Gender:</p>
+        <p id="age">Age:</p>
+        <p id="hi">Height:</p>
+        <p id="wi">Weight:</p>
+</div> -->
+    <div class="main-content">
+        <div class="upper">
+            <img src="/image/image.png" alt="" style="height: 130px; width: 130px;">
+            <div class="text">
+                <h1 style="font-size: 2em; color: brown;">BMI Calculator</h1>
+                <h2>Body Mass Index</h2>
+            </div>
+        </div>
+        <div class="inner">
+            <div class="gender">
+                <label style="font-size: 25px;">GENDER</label>
+                <div class="input">
+                    <input type="text" placeholder=" Male" style=" border: 2px solid rgb(224, 218, 218); margin-left: 10px; border-radius: 8px; height: 30px;">
+                    <input type="text" id="gender" placeholder=" Female" style=" margin-left: 10px; border-radius: 8px; height: 30px; border: 2px solid rgb(224, 218, 218);">
+                </div>
+                <div class="age" style="padding-left: 50px;">
+                    <label style="font-size: 25px;">AGE</label>
+                </div>
+
+                <div class="age_text">
+                <input type="text" id="Age" placeholder= "  years"style=" border: 2px solid rgb(224, 218, 218); margin-left: 10px; border-radius: 8px; height: 30px;"></div>
+            </div>
+
+            <div class="height" style="margin-top: 50px; margin-left: 20px;">
+                <label style="font-size: 25px;">HEIGHT</label>
+                <div class="height_i"> 
+                    <input type="text" id="height"  placeholder="  in cm" style=" border:2px solid rgb(224, 218, 218);margin-left: 10px; border-radius: 8px; height: 30px;">
+                </div>
+            
+
+                <div class="weight" style="margin-left: 230px;">
+                    <label style="font-size: 25px;">WEIGHT</label>
+                </div>
+                <div class="weight_in">
+                    <input type="text" id="weight" placeholder="" style=" border :2px solid rgb(224, 218, 218); margin-left: 10px; border-radius: 8px; height: 30px;">
+                </div>
+            </div>
+            
+
+            <button id="button"class="Calculator" onclick="a()">CALCULATOR</button>
+
+            <div class="bottom" id="result"></div>
+            </div>
+
+
+            
+
+</body>
+<script>
+
+    function a(){
+
+        let res = document.getElementById('result')
+        res.innerHTML="fdf"
+        let height=document.getElementById('height').value
+        let weight=document.getElementById('weight').value
+        height = height/100;
+        let sum = weight / height*2;
+        res.innerHTML=sum.toFixed(2)
+        res.style.display="flex"
+        res.style.justifyContent="center"
+        res.style.alignItems="center"
+        res.style.fontSize="1.2em"
+        
+
+    }
+
+    // let g=document.getElementById('gen')
+    // let a=document.getElementById('age')
+    // let h=document.getElementById('hi')
+    // let w=document.getElementById('wi')
+
+        // function click(){
+            // alert()
+            // let gender_i=document.getElementById("gender").value;
+            // let age_i=document.getElementById("Age").value;
+            // let height_i=document.getElementById("height").value;
+            // let weight_i=document.getElementById("weight").value;
+
+            // height_i=height_i/100;
+            // Bmi=weight_i/height_i*2;
+            // let res=document.write.getElementById('result')
+            // res.innerHTML=Bmi;
+
+            // gender.innerHTML=`${gender_i}`;
+            // age.innerHTML=`${age_i}`;
+            // height.innerHTML=`${height_i}`;
+            // weight.innerHTML=`${weight_i}`;
+
+        // }
+</script> 
+</html>

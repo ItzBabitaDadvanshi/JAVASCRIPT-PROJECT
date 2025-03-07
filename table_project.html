@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .table_box{
+        height: 200px;
+        width: 100%;
+        display: inline-flex;
+        background-color: teal;
+        border: 2px teal;
+    } 
+    .table_box div{
+        margin-left: 10px;
+        margin-top: 50px;
+    }
+    .table_box input{
+        text-align: center;
+    }
+    p{
+        text-align: center;
+        color: blanchedalmond;
+        font-weight: 700;
+    }
+
+    button{
+        height: 50px;
+        width: 140px;
+        font-size: 1.1em;
+        color:white;
+        background-color:teal;
+        border: 2px solid;
+        border-radius: 15px;
+    }
+    button:hover{
+        background-color: blue;
+    }
+</style>
+<body>
+    <!-- table manipulaton is used for create table inside cell -->
+<table id="table"></table><br>
+
+<div class="table_box">
+    
+<div>
+    <p>STUDENTS NAME</p>
+    <input type="text"   id="stu_name" placeholder="Stu_name">
+</div>
+
+<div>
+    <P>ENGLISH</P>
+    <input type="Number" id="english" placeholder="English">
+</div>
+
+<div>
+    <P>MATHS</P>
+    <input type="Number" id="maths" placeholder="Maths">
+</div>
+
+<div>
+    <P>SCIENCE</P>
+    <input type="Number" id="science" placeholder="Science">
+</div>
+
+<div>
+    <P>HINDI</P>
+    <input type="Number" id="hindi" placeholder="Hindi">
+</div>
+</div>
+<br><br>
+<button onclick="add_student_name()">Add Students</button><br>
+<button style="width: 160px;" onclick="delete_stu()"> Delete Students</button>
+
+
+    <script>   
+    let table=document.getElementById('table')
+        
+        let first_row=table.insertRow()
+        first_row.insertCell(0).innerText="STUDENT"
+        first_row.insertCell(1).innerText="ENGLISH"
+        first_row.insertCell(2).innerText="MATHS"
+        first_row.insertCell(3).innerText="SCIENCE"
+        first_row.insertCell(4).innerText="HINDI"
+        first_row.insertCell(5).innerText="TOTAL"
+        first_row.insertCell(6).innerText="PERCENTAGE"
+        first_row.insertCell(7).innerText="GRADE"
+        
+// Adding function
+        function add_student_name(){
+        let stu_name=document.getElementById('stu_name').value
+        let english=document.getElementById('english').value
+        let maths=document.getElementById('maths').value
+        let science=document.getElementById('science').value
+        let hindi=document.getElementById('hindi').value
+
+        let second_row=table.insertRow()
+        second_row.insertCell(0).innerText=stu_name
+        second_row.insertCell(1).innerText=english
+        second_row.insertCell(2).innerText=maths
+        second_row.insertCell(3).innerText=science
+        second_row.insertCell(4).innerText=hindi
+        let total=second_row.insertCell(5).innerText=parseInt(english)+parseInt(maths)+parseInt(science)+parseInt(hindi)
+        console.log(total)
+
+        let percentage=second_row.insertCell(6).innerText=total*100/400
+        console.log(percentage)
+
+        // grade marks
+        if(percentage>=80||percentage==100){
+            second_row.insertCell(7).innerHTML="Grade A"
+            }
+        else if(percentage>70||percentage<=80){
+            second_row.insertCell(7).innerHTML="Grade B"
+        } 
+        else if(percentage>60||percentage<=70){
+            second_row.insertCell(7).innerHTML="Grade C"
+        }
+        else if(percentage<50||percentage<=60){
+            second_row.insertCell(7).innerHTML="Grade D"
+        }
+        if(percentage>40){
+            second_row.insertCell(7).innerHTML="Fail"
+        }
+        
+
+        stu_name=document.getElementById('stu_name').value=" "
+        stu_name=document.getElementById('english').value=" "
+        stu_name=document.getElementById('maths').value=" "
+        stu_name=document.getElementById('science').value=" "
+        stu_name=document.getElementById('hindi').value=" "
+    }
+
+// Delete function
+function delete_stu() {
+    let table = document.getElementById('table');
+    let name = document.getElementById('stu_name').value.trim(); // Ensure input is trimmed
+    let rows = table.rows.length;
+
+    for (let i = 0; i < rows; i++) {
+        let row = table.rows[i];
+        
+        // Check if the first cell of the row matches the input name
+        if (row.cells[0].innerHTML.trim() === name) {
+            table.deleteRow(i);
+            rows--; // Adjust the row count since a row is deleted
+            i--;    // Adjust the index to check the new row at the same index
+        }
+    }
+
+    // Clear the input field after deletion
+    document.getElementById('stu_name').value = "";
+}
+
+</script>
+</body>
+</html>
